@@ -1,0 +1,61 @@
+services:
+  jupyterlab:
+    image: quay.io/bedata/jupyterlab/qgis/base
+    container_name: qgis-jupyterlab
+    ports:
+      - "8888:8888"
+    volumes:
+      - qgis_data:/home/jovyan
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=your_secure_token_here
+      - QGIS_AUTH_DISABLE=true
+    user: root
+    restart: unless-stopped
+    networks:
+      - qgis-network
+
+  web:
+    build:
+      context: apps/backend
+      dockerfile: Dockerfile.geodjango
+    container_name: geodjango
+    working_dir: /app
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - apps/backend:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+      - DJANGO_SETTINGS_MODULE=geodjango.settings
+      - DATABASE_URL=postgis://qgis:qgis123@postgis:5432/gis
+    depends_on:
+      - postgis
+    networks:
+      - qgis-network
+
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: postgis
+    environment:
+      POSTGRES_USER: qgis
+      POSTGRES_PASSWORD: qgis123
+      POSTGRES_DB: gis
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - qgis-network
+
+networks:
+  qgis-network:
+    driver: bridge
+
+volumes:
+  qgis_data:
+  postgres_data:

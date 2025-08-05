@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Timeline -->
+  <line x1="50" y1="50" x2="350" y2="50" stroke="#333" stroke-width="2"/>
+  
+  <!-- Time markers -->
+  <line x1="100" y1="40" x2="100" y2="60" stroke="#333" stroke-width="2"/>
+  <line x1="200" y1="40" x2="200" y2="60" stroke="#333" stroke-width="2"/>
+  <line x1="300" y1="40" x2="300" y2="60" stroke="#333" stroke-width="2"/>
+  
+  <!-- Time labels -->
+  <text x="100" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Past</text>
+  <text x="200" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Present</text>
+  <text x="300" y="80" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Future</text>
+  
+  <!-- Title -->
+  <text x="200" y="30" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#333">Kartografische Zeitmaschine</text>
+  
+  <!-- Direction indicator -->
+  <polygon points="340,50 330,45 330,55" fill="#333"/>
+  <text x="370" y="55" font-family="Arial" font-size="10" text-anchor="middle" fill="#666">Time</text>
+</svg>

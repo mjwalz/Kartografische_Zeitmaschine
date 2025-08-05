@@ -1,0 +1,23 @@
+# Core Django
+Django>=5.2.0
+
+# Database
+psycopg[binary]>=3.2.0  # Using psycopg3 (psycopg) instead of psycopg2
+
+# GeoDjango
+django-leaflet>=0.29.0
+# Using system GDAL via python3-gdal in the Dockerfile
+
+# REST Framework
+djangorestframework>=3.15.0
+djangorestframework-gis>=1.0.0  # Compatible version with Django 5.2
+django-filter>=23.0  # For filtering support in DRF
+
+# Security & CORS
+django-cors-headers>=4.3.0  # Updated for Django 5.2 compatibility
+
+# Environment
+python-dotenv>=1.0.0
+
+# Development
+ipython>=8.0.0
