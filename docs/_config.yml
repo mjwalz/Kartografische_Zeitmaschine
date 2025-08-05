@@ -1,2 +1,7 @@
 #remote_theme: pages-themes/hacker@v0.2.0
-#remote_theme: dracula/gh-pages
+remote_theme: dracula/gh-pages
+repository: mjwalz/Kartografische_Zeitmaschine
+title: Kartografische Zeitschicht
+description: A digital time machine for exploring historical maps and geospatial data, enabling users to visualize and interact with cartographic changes over time in storymaps.
+show_header: true
+colorspace: orange

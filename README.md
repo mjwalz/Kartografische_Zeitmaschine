@@ -246,6 +246,11 @@ gantt
 
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph LR
     %% Core entity relationships
     W[WebMap] --> L[Layer]
@@ -273,10 +278,10 @@ graph LR
     U --> I[Webmap-Interaction]
     
     %% Style
-    classDef entity fill:#555,stroke:#333
-    classDef geo_json fill:#BBB,stroke:#333,color:#333
-    classDef interaction fill:#222,stroke:#333,stroke-width:8px,color:#DDD
-    classDef attributes fill:#222,stroke:#666,stroke-width:1px,stroke-dasharray: 3 3,color:#DDD
+    %%classDef entity fill:#555,stroke:#333
+    %%classDef geo_json fill:#BBB,stroke:#333,color:#333
+    %%classDef interaction fill:#222,stroke:#333,stroke-width:8px,color:#DDD
+    %%classDef attributes fill:#222,stroke:#666,stroke-width:1px,stroke-dasharray: 3 3,color:#DDD
     class W,L,U entity
     class G,FT,GT geo_json
     class C,F interaction
@@ -296,6 +301,11 @@ graph LR
 - Reset interaction with dedicated button
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph LR
     A[Storymap] --> B@{ shape: procs, label: "Storymap Items"}
     B --> D[Background]
@@ -320,9 +330,9 @@ graph LR
     P --> R[Zoom]
     P --> S[Pan]
     P --> T[Pitch/Rotate]
-    classDef attributes fill:#222,stroke:#666,stroke-width:1px,stroke-dasharray: 3 3,color:#DDD
-    classDef interaction fill:#222,stroke:#333,stroke-width:4px,color:#DDD
-    classDef item fill:#BBB,stroke:#333,color:#333
+    %%classDef attributes fill:#222,stroke:#666,stroke-width:1px,stroke-dasharray: 3 3,color:#DDD
+    %%classDef interaction fill:#222,stroke:#333,stroke-width:4px,color:#DDD
+    %%classDef item fill:#BBB,stroke:#333,color:#333
     class F,G,H,I,Q,R,S,T attributes
     class C,D interaction
     class CT item
@@ -540,6 +550,11 @@ UI Component Options:
 Main parts in development are Frontend, Backend, Database and QGIS as an editor for spatial data.
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph LR
     subgraph Kartografische_Zeitmaschine
         vue(Frontend) -->|API Calls| dj(Backend)
@@ -554,10 +569,10 @@ graph LR
     end
     
     
-    style Q fill:#1d2b4c,stroke:#335,stroke-width:2px
-    style dj stroke:#335,stroke-width:2px,color:white
-    style db stroke:#335,stroke-width:2px,color:white
-    style vue stroke:#335,stroke-width:2px,color:white
+    %%style Q fill:#1d2b4c,stroke:#335,stroke-width:2px
+    %%style dj stroke:#335,stroke-width:2px,color:white
+    %%style db stroke:#335,stroke-width:2px,color:white
+    %%style vue stroke:#335,stroke-width:2px,color:white
 
 ```
 
@@ -566,6 +581,10 @@ Establishes the core infrastructure and basic functionality, including authentic
 
 #### MVP
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
 graph LR
     subgraph Kartografische_Zeitmaschine
         webmap((Webmap)) -->vue(Frontend)
@@ -581,16 +600,21 @@ graph LR
     end
     
     
-    style Q fill:#1d2b4c,stroke:#335,stroke-width:2px
-    style dj stroke:#335,stroke-width:2px,color:white
-    style db stroke:#335,stroke-width:2px,color:white
-    style vue stroke:#335,stroke-width:2px,color:white
+    %%style Q fill:#1d2b4c,stroke:#335,stroke-width:2px
+    %%style dj stroke:#335,stroke-width:2px,color:white
+    %%style db stroke:#335,stroke-width:2px,color:white
+    %%style vue stroke:#335,stroke-width:2px,color:white
 ```
 ---
 
 #### Detailed View
 The detailed view shows the core components of the MVP.
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph TD
     subgraph Kartografische_Zeitmaschine
         vue(Frontend) --> dj(Backend)
@@ -611,9 +635,9 @@ graph TD
     
     dj --> Database
 
-    style dj stroke:#335,stroke-width:2px,color:white
-    style db stroke:#335,stroke-width:2px,color:white
-    style vue stroke:#335,stroke-width:2px,color:white
+    %%style dj stroke:#335,stroke-width:2px,color:white
+    %%style db stroke:#335,stroke-width:2px,color:white
+    %%style vue stroke:#335,stroke-width:2px,color:white
 
 ```
 ---
@@ -623,6 +647,11 @@ graph TD
 The MVP will be in a cluster like shown in the diagram below.
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph TD
     subgraph GitHub[GitHub]
         Repo[Repository]
@@ -655,8 +684,8 @@ graph TD
     
     subgraph External[External Services]
         PgServer[PostgreSQL Server] --> PgDB[(PostGIS Database)]
-        style PgServer stroke:#335,stroke-width:2px,color:white
-        style PgDB stroke:#335,stroke-width:2px,color:white
+        %%style PgServer stroke:#335,stroke-width:2px,color:white
+        %%style PgDB stroke:#335,stroke-width:2px,color:white
     end
     
     QGIS[QGIS Editor]
@@ -677,11 +706,11 @@ graph TD
     Django & WebApp -.->|Tests| Tests
     
     %% Styling
-    style QGIS fill:#1d2b4c,stroke:#335,stroke-width:2px,color:white
-    style Django stroke:#335,stroke-width:2px,color:white
-    style WebApp stroke:#335,stroke-width:2px,color:white
-    style GitHub fill:#24292f,stroke:#57606a,stroke-width:2px,color:white
-    style Actions fill:#2088ff,stroke:#1a5f99,stroke-width:2px,color:white
+    %%style QGIS fill:#1d2b4c,stroke:#335,stroke-width:2px,color:white
+    %%style Django stroke:#335,stroke-width:2px,color:white
+    %%style WebApp stroke:#335,stroke-width:2px,color:white
+    %%style GitHub fill:#24292f,stroke:#57606a,stroke-width:2px,color:white
+    %%style Actions fill:#2088ff,stroke:#1a5f99,stroke-width:2px,color:white
 ```
 ---
 
@@ -690,6 +719,11 @@ Minimal graph showing the core components of cluster.
 The cluster part should be duplicated for TST and the TST database might be on the same node as the PRD database.
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph TD
     subgraph Cluster["Cluster (at least two nodes)"]
             Ingress[Ingress Controller]
@@ -697,12 +731,12 @@ graph TD
             Backend[Backend Services]
             Ingress --> Frontend
             Ingress --> Backend
-        style Backend stroke:#335,stroke-width:2px,color:white
-        style Frontend stroke:#335,stroke-width:2px,color:white
+        %%style Backend stroke:#335,stroke-width:2px,color:white
+        %%style Frontend stroke:#335,stroke-width:2px,color:white
     end
     subgraph Data_Layer[extra node]
         Database[(Database)]
-        style Database stroke:#335,stroke-width:2px,color:white
+        %%style Database stroke:#335,stroke-width:2px,color:white
     end
     
     QGIS[QGIS Editor]
@@ -725,6 +759,11 @@ graph TD
 ---
 Cleaner version with same content as graph above.
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph TD
     subgraph Cluster[Cluster]
         Ingress[Ingress Controller]
@@ -757,6 +796,11 @@ graph TD
 Builds on the MVP with advanced features like storymaps, enhanced roles, and platform improvements based on user feedback.
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph LR
     subgraph Kartografische_Zeitmaschine
         storymap((Storymap)) -->vue(Frontend)
@@ -773,15 +817,20 @@ graph LR
     end
     
     
-    style Q fill:#1d2b4c,stroke:#335,stroke-width:2px
-    style dj stroke:#335,stroke-width:2px,color:white
-    style db stroke:#335,stroke-width:2px,color:white
-    style vue stroke:#335,stroke-width:2px,color:white
+    %%style Q fill:#1d2b4c,stroke:#335,stroke-width:2px
+    %%style dj stroke:#335,stroke-width:2px,color:white
+    %%style db stroke:#335,stroke-width:2px,color:white
+    %%style vue stroke:#335,stroke-width:2px,color:white
 ```
 
 ### Phase 3: Maturity
 Focuses on refinement, user experience, and community engagement and api documentation to prepare for the 1.0 release.
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph LR
     subgraph Kartografische_Zeitmaschine
         storymap((Storymap)) -->vue(Frontend)
@@ -799,10 +848,10 @@ graph LR
     end
     
     
-    style Q fill:#1d2b4c,stroke:#335,stroke-width:2px
-    style dj stroke:#335,stroke-width:2px,color:white
-    style db stroke:#335,stroke-width:2px,color:white
-    style vue stroke:#335,stroke-width:2px,color:white
+    %%style Q fill:#1d2b4c,stroke:#335,stroke-width:2px
+    %%style dj stroke:#335,stroke-width:2px,color:white
+    %%style db stroke:#335,stroke-width:2px,color:white
+    %%style vue stroke:#335,stroke-width:2px,color:white
 ```
 
 ## Webmap Components
@@ -843,6 +892,11 @@ To get that professional, polished look similar to Esri's StoryMaps, the key is 
 ---
 ### Webmap Components Graph
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph LR
     subgraph "Web Map"
         direction LR
@@ -932,6 +986,11 @@ The ER diagram displays the relationships between the models in the Kartographis
 
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 erDiagram
     %% --- Cardinality Legend ---
     %% ||--o|  One-to-One
@@ -1156,6 +1215,11 @@ Project documentation:
 ### Development Workflow
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 sequenceDiagram
     create actor S as 
     create actor M as 
@@ -1196,6 +1260,11 @@ After merging to `main` it will be deployed to **TST** and **PRD** via GitHub ac
 This diagram illustrates the CI/CD pipeline from code push to production deployment, triggered by merges and tags.
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 graph TD
     subgraph "Local Development"
         A[Developer on feature branch] -->|git push| B(GitHub Repository)
@@ -1222,9 +1291,9 @@ graph TD
     end
 
     %% Styling to match the document's theme
-    classDef dev fill:#1d2b4c,stroke:#335,stroke-width:2px,color:white
-    classDef pipeline fill:#555,stroke:#333,color:white
-    classDef env fill:#444,stroke:#333,color:white
+    %%classDef dev fill:#1d2b4c,stroke:#335,stroke-width:2px,color:white
+    %%classDef pipeline fill:#555,stroke:#333,color:white
+    %%classDef env fill:#444,stroke:#333,color:white
 
     class A,H dev
     class B,C,D,E,F,G,I pipeline
@@ -1236,6 +1305,11 @@ graph TD
 This workflow ensures data quality and narrative coherence before publication. It's a two-phase process involving data certification followed by storymap creation and review.
 
 ```mermaid
+---
+config:
+  theme: 'dark'
+---
+
 flowchart 
 subgraph "Certification Flow"
     subgraph "Data"

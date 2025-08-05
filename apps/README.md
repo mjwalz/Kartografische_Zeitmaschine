@@ -44,7 +44,7 @@ To enable seamless two-way editing between QGIS and the web application, a datab
 First, copy the SQL script into the `postgis` container:
 
 ```bash
-docker cp trigger.sql postgis:/tmp/trigger.sql
+docker cp ./infra/trigger.sql postgis:/tmp/trigger.sql
 ```
 
 Then, execute the script inside the container to create the trigger function:
@@ -77,7 +77,7 @@ docker-compose exec web python manage.py load_germany_sample_data
 -   `docker-compose.yml`: Defines and configures the project's services.
 -   `Dockerfile.geodjango`: Dockerfile for the GeoDjango web application.
 -   `webmap/`: The main Django app containing models, views, and data.
--   `trigger.sql`: The SQL script for the PostGIS database trigger.
+-   `infra/trigger.sql`: The SQL script for the PostGIS database trigger.
 
 
 ## How to start with QGIS

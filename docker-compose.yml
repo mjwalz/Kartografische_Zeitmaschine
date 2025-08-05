@@ -17,7 +17,7 @@ services:
 
   web:
     build:
-      context: apps/backend
+      context: ./apps/backend
       dockerfile: Dockerfile.geodjango
     container_name: geodjango
     working_dir: /app
@@ -25,7 +25,7 @@ services:
       sh -c "python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - apps/backend:/app
+      - ./apps/backend:/app
     ports:
       - "8000:8000"
     environment:
